@@ -1,0 +1,36 @@
+.player {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--card-bg);
+  padding: 1rem;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  z-index: 1000;
+}
+
+.seekBar {
+  flex: 1;
+}
+
+p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+button {
+  padding: 0.5rem 1rem;
+  border: none;
+  background: #2563eb;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+span {
+  font-size: 0.9rem;
+}
