@@ -1,0 +1,129 @@
+/* src/components/UI/Carousel.module.css */
+.carousel {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 40px;
+}
+
+.carouselContent {
+  display: flex;
+  gap: 1.5rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  padding: 1rem 0;
+  /* Hide scrollbar */
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.carouselContent::-webkit-scrollbar {
+  display: none;
+}
+
+.carouselItem {
+  flex: 0 0 calc(25% - 1.5rem);
+  scroll-snap-align: start;
+  transition: transform 0.3s ease;
+}
+
+@media (max-width: 1024px) {
+  .carouselItem {
+    flex: 0 0 calc(33.333% - 1.5rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .carouselItem {
+    flex: 0 0 calc(50% - 1.5rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .carouselItem {
+    flex: 0 0 calc(100% - 1.5rem);
+  }
+}
+
+.navButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--card-bg);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+.navButton:hover {
+  background: var(--hover-color, #f0f0f0);
+  transform: translateY(-50%) scale(1.05);
+}
+
+.navButton:first-of-type {
+  left: 0;
+}
+
+.navButton:last-of-type {
+  right: 0;
+}
+
+.navButton:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: translateY(-50%);
+}
+
+/* Carousel header styles */
+.carouselHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 0 1rem;
+}
+
+.carouselTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Indicators for mobile */
+.carouselIndicators {
+  display: none;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+@media (max-width: 768px) {
+  .carouselIndicators {
+    display: flex;
+  }
+}
+
+.indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--border-color);
+  cursor: pointer;
+}
+
+.indicator.active {
+  background: var(--primary-color, #4a90e2);
+}

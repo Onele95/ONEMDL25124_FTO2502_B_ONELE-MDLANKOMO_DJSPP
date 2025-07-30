@@ -1,0 +1,49 @@
+/* src/components/UI/Header.module.css */
+.appHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: var(--header-bg);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.appHeader a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+.appHeader h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.navLink {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.navLink:hover {
+  background-color: var(--hover-bg);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .appHeader {
+    padding: 1rem;
+  }
+  
+  .navLinks {
+    gap: 1rem;
+  }
+}

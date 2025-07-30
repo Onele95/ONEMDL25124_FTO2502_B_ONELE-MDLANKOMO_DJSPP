@@ -1,0 +1,36 @@
+/* src/components/UI/FavoriteButton.module.css */
+.favoriteButton {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  margin-left: 0.5rem;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+
+.favoriteButton:hover {
+  transform: scale(1.1);
+  background-color: rgba(255, 0, 0, 0.1);
+}
+
+.favoriteButton:active {
+  transform: scale(0.95);
+}
+
+/* For the filled heart state */
+.favoriteButton.favorited {
+  color: #ff0000;
+}
+
+/* For accessibility focus states */
+.favoriteButton:focus {
+  outline: 2px solid #4a90e2;
+  outline-offset: 2px;
+}
